@@ -21,7 +21,9 @@ while True:
         geo_lat = google_json_data['results'][0]['geometry']['location']['lat']  # returns latitude
         return_status = google_json_data['status']  # returns the status message
 
-        # print('\nInformation pertaining to your search:\n')
+        print('\nInformation pertaining to your search:\n')
+        
+        ''' Uncomment all lines you want information for '''
         # print('\tFull address: ' + full_address)
         # print('\tCity: ' + addr_compo_city_long_name)
         # print('\tCounty: ' + addr_compo_county_long_name)
