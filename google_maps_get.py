@@ -18,6 +18,7 @@ while user_input != 'exit':
         geo_lng = google_json_data['results'][0]['geometry']['location']['lng']  # returns longitude
         geo_lat = google_json_data['results'][0]['geometry']['location']['lat']  # returns latitude
         return_status = google_json_data['status']  # returns the status message
+
     except Exception as e:
         print('\n** An unexpected error occured. Please try again! **\n')
     
