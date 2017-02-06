@@ -22,7 +22,7 @@ while True:
         return_status = google_json_data['status']  # returns the status message
 
         print('\nInformation pertaining to your search:\n')
-        
+
         ''' Uncomment all lines you want information for '''
         # print('\tFull address: ' + full_address)
         # print('\tCity: ' + addr_compo_city_long_name)
