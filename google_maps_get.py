@@ -2,11 +2,12 @@ import urllib.parse
 import requests
 
 
-user_input = ''
-while user_input != 'exit':
+while True:
     try:
         google_url = 'http://maps.googleapis.com/maps/api/geocode/json?'
         user_input = input('\nPlease enter in your location: ')
+        if user_input == '$':
+            break
         print('-' * 50)
         url = google_url + urllib.parse.urlencode({'address': user_input})
         google_json_data = requests.get(url).json()  # creates json data from the requests
