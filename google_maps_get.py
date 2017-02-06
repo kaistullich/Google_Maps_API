@@ -13,5 +13,5 @@ addr_compo_city_long_name = google_json_data['results'][0]['address_components']
 addr_compo_county_long_name = google_json_data['results'][0]['address_components'][1]['long_name']
 addr_compo_state_long_name = google_json_data['results'][0]['address_components'][2]['long_name']
 addr_compo_state_short_name = google_json_data['results'][0]['address_components'][2]['short_name']
-print(address_components_state_long_name)
-print(address_components_state_short_name)
+geo_lng = google_json_data['results'][0]['geometry']['location']['lng']
+geo_lat = google_json_data['results'][0]['geometry']['location']['lat']
