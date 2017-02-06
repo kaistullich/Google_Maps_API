@@ -4,7 +4,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/home')
 def index():
     user_input = ''
     while user_input != 'exit':
@@ -24,19 +24,21 @@ def index():
             geo_lat = google_json_data['results'][0]['geometry']['location']['lat']  # returns latitude
             return_status = google_json_data['status']  # returns the status message
 
-            print('\nInformation pertaining to your search:\n')
-            print('\tFull address: ' + full_address)
-            print('\tCity: ' + addr_compo_city_long_name)
-            print('\tCounty: ' + addr_compo_county_long_name)
-            print('\tFull state name: ' + addr_compo_state_long_name)
-            print('\tState abreviation: ' + addr_compo_state_short_name)
-            print('\tLongitude: ' + str(geo_lng))
-            print('\tLatitude: ' + str(geo_lat))
-            print('\tStatus: ' + return_status)
-            print('-' * 50)
+            # print('\nInformation pertaining to your search:\n')
+            # print('\tFull address: ' + full_address)
+            # print('\tCity: ' + addr_compo_city_long_name)
+            # print('\tCounty: ' + addr_compo_county_long_name)
+            # print('\tFull state name: ' + addr_compo_state_long_name)
+            # print('\tState abreviation: ' + addr_compo_state_short_name)
+            # print('\tLongitude: ' + str(geo_lng))
+            # print('\tLatitude: ' + str(geo_lat))
+            # print('\tStatus: ' + return_status)
+            # print('-' * 50)
 
         except Exception as e:
             print('\n** An unexpected error occured. Please try again! **\n')
+        
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
