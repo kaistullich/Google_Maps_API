@@ -5,7 +5,7 @@ import requests
 while True:
     try:
         google_url = 'http://maps.googleapis.com/maps/api/geocode/json?'
-        user_input = input('\nPlease enter in your location: ')
+        user_input = input('\nEnter address/location to search: ')
         if user_input == '$':
             break
         print('-' * 50)
