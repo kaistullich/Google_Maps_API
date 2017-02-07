@@ -9,7 +9,6 @@ while True:
             break
         print('-' * 50)
         url = google_url + urllib.parse.urlencode({'address': user_input})
-        print(url)
         google_json_data = requests.get(url).json()  # creates json data from the requests
         
         full_address = google_json_data['results'][0]['formatted_address']  # i.e. (Morgan Hill, CA, USA)
