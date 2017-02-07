@@ -1,13 +1,12 @@
 import urllib.parse
 import requests
 
-#user_input = inpsut('Enter address/location you want to search: ')
 while True:
 	try:
 		google_url = 'http://maps.googleapis.com/maps/api/geocode/json?'
 		user_input = input('\nEnter address/location to search: ')
-#		if user_input == '$':
-#			break
+		if user_input == '$':
+			break
 		print('-' * 50)
 		url = google_url + urllib.parse.urlencode({'address': user_input})
 		print(url)
@@ -29,7 +28,8 @@ while True:
 			for short_name in google_json_data['results'][0]['address_components']:
 				if len(short_name['short_name']) == 2:
 					short_name_addr.append(short_name['short_name'])
-				
+			
+			del short_name_addr[-1]
 			
 			return long_name_addr, short_name_addr
 				
